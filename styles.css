@@ -1,0 +1,349 @@
+:root {
+    --orange: #ff914d;
+    --black: #453c4b;
+    --blue-grey: #78888e;
+    --font-header: 'Signika', sans-serif;
+    --font-body: 'Lato', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--black);
+    line-height: 1.6;
+    background: #fff;
+    scroll-behavior: smooth;
+    background-image: url('bg.jpg');
+    background-size: contain;
+}
+
+header {
+    background-image: url('header.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 1rem 1rem;
+}
+
+/* Section container */
+.section {
+    background: white;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 900px;
+    border-radius: 12px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+}
+
+.special {
+    background-color: white;
+    width:100vw;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section h2 {
+    text-align: center;
+}
+
+/* Decorative asterisk */
+section h2::before {
+    content: "";
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-image: url('star.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: -2rem;
+    margin-top: -0.5rem;
+    vertical-align: middle;
+}
+
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+.hero img {
+    max-width: 100%;
+    width: 300px;
+    margin-bottom: 1rem;
+}
+
+.cta {
+    width: 100%;
+    margin-top: 1rem;
+    padding: .8rem;
+    border: none;
+    border-radius: .3rem;
+    background: var(--orange);
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.cta:hover {
+    background: var(--black);
+}
+
+.contact-form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0 auto;
+}
+
+.contact-form-container input,
+.contact-form-container button {
+    padding: 0.8rem;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    border: 1px solid var(--blue-grey);
+    border-radius: 0.3rem;
+}
+
+.contact-form-container button {
+    background: var(--orange);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-form-container button:hover {
+    background: var(--black);
+}
+
+/* contact modal */
+
+#popup-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+#popup-modal.show {
+    display: flex;
+}
+
+#popup-content {
+    background-color: #ddffdd;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 90%;
+}
+
+#popup-modal.error #popup-content {
+    background-color: #ffdddd;
+}
+
+#popup-close {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
+
+/* google maps */
+
+.map-frames {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.map-frames iframe {
+    flex: 1 1 300px;
+    height: 300px;
+    border: 0;
+    border-radius: 0.5rem;
+}
+
+/* FAQ Styles */
+.faq .item {
+    border-bottom: 1px solid #eee;
+    padding: 1rem 0;
+}
+
+.faq .question {
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-family: var(--font-header);
+    padding: 0.8rem;
+}
+
+.faq .question img {
+    width: 24px;
+    margin-right: 0.5rem;
+}
+
+.faq .answer {
+    padding-top: 0.5rem;
+    font-size: 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+/* Calendar */
+.calendar {
+    display: grid;
+    grid-template-columns: 60px repeat(7, 1fr);
+    border: 1px solid var(--blue-grey);
+}
+
+.calendar .cell {
+    border: 1px solid var(--blue-grey);
+    padding: .5rem;
+    text-align: center;
+}
+
+.calendar .header {
+    background: var(--orange);
+    color: #fff;
+    font-family: var(--font-header);
+}
+
+.calendar .time {
+    background: #f5f5f5;
+    font-weight: bold;
+}
+
+.calendar .cell:hover {
+    background: var(--orange);
+    cursor: pointer;
+}
+
+.calendar .disabled {
+    background: #ddd;
+    color: #999;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.modal .content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: .5rem;
+    width: 90%;
+    max-width: 400px;
+}
+
+.modal input,
+.modal button {
+    width: 100%;
+    margin-top: 1rem;
+    padding: .8rem;
+    font-family: var(--font-body);
+    border: 1px solid var(--blue-grey);
+    border-radius: .3rem;
+}
+
+.modal button {
+    background: var(--orange);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.modal button:hover {
+    background: var(--black);
+}
+
+#toTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--orange);
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    font-size: 1.2rem;
+    transition: all 0.3s ease-in-out; 
+}
+
+#toTop:hover {
+    background: var(--black);
+}
+
+footer {
+    background-image: url('header.png');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin-top: 100px;
+    color: #fff;
+    font-size: 0.9rem;
+    min-height: 120px;
+}
+
+@media (min-width: 600px) {
+    .hero {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .hero img {
+        margin-right: 2rem;
+    }
+
+    .hero .intro {
+        max-width: 400px;
+        text-align: left;
+    }
+}

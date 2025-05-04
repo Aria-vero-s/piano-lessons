@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cours de Piano Débutants</title>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Signika:wght@400;600;700&display=swap" rel="stylesheet">
+	<link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+	<header>
+	</header>
+	<div class="special">
+		<div class="hero section">
+			<img src="piano.png" alt="Illustration de piano">
+			<div class="intro">
+				<h1>Cours de Piano Débutants</h1>
+				<p>Bonjour ! Je propose des cours de piano adaptés aux débutants pour jeunes ou adultes. Mon horaires est flexibles et les cours sont donnés chez votre domicile soit à Juvisy-sur-Orge ou Clichy.</p>
+				<br>
+				<div id="about">
+					<h2>À propos de moi</h2>
+					<p>Je m'appelle Ariane Saulnier, et je joue du piano, de la guitare et de la clarinette et j'ai
+						fait mes études en musique classique. Avec plusieurs années d’expérience dans
+						l’enseignement en milieu scolaire et en enseignement privé, j’adapte mes cours à chaque élève, en
+						mêlant théorie et pratique.</p>
+				</div>
+				<a href="#contact"><button class="cta"><strong>Me contacter</strong></button></a>
+			</div>
+		</div>
+	</div>
+
+	<!-- Calendrier -->
+	<section class="section" id="calendar-section">
+		<h2>Disponibilités</h2>
+		<div class="calendar" id="calendar"></div>
+	</section>
+
+	<p id="modal-feedback" style="margin-top: 1em;"></p>
+	
+	  <!-- Modal de réservation -->
+	  <div class="modal" id="modal">
+		<div class="content">
+		  <h3 id="modal-title"></h3>
+		  <input type="text" id="modal-name" placeholder="Votre nom" required>
+		  <input type="email" id="modal-email" placeholder="Votre email" required>
+		  <button id="modal-submit">Confirmer la réservation</button>
+		  <button id="modal-cancel" style="margin-top: 0.5rem; background: #ccc; color: #000;">Annuler</button>
+		</div>
+	  </div>
+
+	<section class="section faq" id="faq">
+		<h2>Questions fréquentes</h2>
+		<div class="item">
+			<div class="question"><img src="click.png">Où se donnent les cours?</div>
+			<div class="answer">
+				<p>Je me déplace à votre domicile dans les alentours de Juvisy ou Clichy uniquement.</p>
+				<br>
+				<div class="map-frames">
+					<iframe src="https://maps.google.com/maps?q=Juvisy-sur-Orge,France&hl=fr&z=12&output=embed" allowFullscreen
+						loading="lazy"></iframe>
+					<iframe src="https://maps.google.com/maps?q=Clichy,France&hl=fr&z=12&output=embed" allowFullscreen
+						loading="lazy"></iframe>
+				</div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="question"><img src="click.png">Faut-il avoir un piano à la maison ?</div>
+			<div class="answer">
+				<p>Un clavier numérique suffit, à condition d’avoir des touches pondérées pour habituer les doigts.</p>
+			</div>
+		</div>
+		<div class="item">
+			<div class="question"><img src="click.png">À quel âge commencer ?</div>
+			<div class="answer">
+				<p>Dès 7 ans pour les plus jeunes, et sans limite pour les adultes !</p>
+			</div>
+		</div>
+		<div class="item">
+			<div class="question"><img src="click.png">Quelle méthode de paiement ?</div>
+			<div class="answer">
+				<p>Chèque, virement ou espèces, selon votre préférence.</p>
+			</div>
+		</div>
+	</section>
+
+	<div id="popup-modal">
+		<div id="popup-content">
+		  <p id="popup-message"></p>
+		  <button id="popup-close">Fermer</button>
+		</div>
+	</div>	  
+
+	<section class="section" id="contact">
+		<h2>Contact</h2>
+		<div class="contact-form-container" id="contact-form-container">
+		  <form class="contact-form" id="contact-form">
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name" required />
+  
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email" required />
+  
+			<label for="message">Message:</label>
+			<textarea id="message" name="message" rows="4" required></textarea>
+  
+			<button type="submit" id="send-email-button">Submit</button>
+		  </form>
+		</div>  
+	</section>
+
+	<button id="toTop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑</button>
+
+	<footer>
+		&copy; 2025 Cours de Piano. Tous droits réservés.
+	</footer>
+	<script src="script.js"></script>
+	<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+	<script src="email.js"></script>
+</body>
+
+</html>
