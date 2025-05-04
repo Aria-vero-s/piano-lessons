@@ -99,6 +99,23 @@ section h2::before {
     border-radius: .3rem;
 }
 
+@media (max-width: 600px) {
+    .intro {
+        background-color: white;
+    }
+    .special {
+        background-image: url('banner.png');
+        background-position: right;
+        background-size: 300%;
+        width:100vw;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .intro {
+        margin-top: 80px;
+    }
+}
+
 
 .cta {
     width: 100%;
