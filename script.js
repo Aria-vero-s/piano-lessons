@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		let classes = 'cell';
 		if (day === 'Lundi' || day === 'Mardi') classes += ' disabled';
 		if (day === 'Jeudi' && h >= 14) classes += ' disabled';
-		const text = classes.includes('disabled') ? '' : 'Disponible';
+		const text = classes.includes('disabled') ? '' : '✓';
 		calendar.innerHTML += `<div class="${classes}" data-day="${day}" data-hour="${h}">${text}</div>`;
 	  });
 	}

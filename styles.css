@@ -255,6 +255,16 @@ section h2::before {
     color: #999;
 }
 
+@media (max-width: 480px) {
+
+	.calendar .header {
+		font-size:0.4rem;
+	}
+	.calendar {
+		font-size: 0.6rem;
+	}
+}
+
 /* Modal */
 .modal {
     position: fixed;
