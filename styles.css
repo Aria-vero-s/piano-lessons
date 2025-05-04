@@ -102,17 +102,16 @@ section h2::before {
 @media (max-width: 600px) {
     .intro {
         background-color: white;
+        margin-top: 160px;
     }
     .special {
         background-image: url('banner.png');
         background-position: right;
+        background-repeat: no-repeat;
         background-size: 200%;
         width:100vw;
         margin: 0 !important;
         padding: 0 !important;
-    }
-    .intro {
-        margin-top: 160px;
     }
     header {
         display:none;
