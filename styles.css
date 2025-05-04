@@ -106,13 +106,16 @@ section h2::before {
     .special {
         background-image: url('banner.png');
         background-position: right;
-        background-size: 300%;
+        background-size: 200%;
         width:100vw;
         margin: 0 !important;
         padding: 0 !important;
     }
     .intro {
-        margin-top: 80px;
+        margin-top: 160px;
+    }
+    header {
+        display:none;
     }
 }
 
